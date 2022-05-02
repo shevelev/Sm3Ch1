@@ -20,9 +20,9 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="192" translatesAutoresizingMaskIntoConstraints="NO" id="O8o-Cd-Nvn">
                                 <rect key="frame" x="82" y="101" width="250" height="694"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1gC-cW-iS3">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alias_logo" translatesAutoresizingMaskIntoConstraints="NO" id="1gC-cW-iS3">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
-                                        <color key="backgroundColor" red="0.55773198599999996" green="0.16153386240000001" blue="0.1450667977" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="Wdd-YT-c3X"/>
                                             <constraint firstAttribute="width" constant="250" id="eMN-2I-oNO"/>
@@ -158,6 +158,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="alias_logo" width="776" height="540"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
