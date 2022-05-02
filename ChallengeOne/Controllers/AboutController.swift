@@ -1,19 +1,17 @@
 //
-//  ViewController.swift
+//  AboutController.swift
 //  ChallengeOne
 //
-//  Created by Сергей Шевелев on 01.05.2022.
+//  Created by Сергей Шевелев on 02.05.2022.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class AboutController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        title = "Об игре"
     }
-
-
 }
-

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q6A-CZ-vmR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -17,79 +17,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="192" translatesAutoresizingMaskIntoConstraints="NO" id="O8o-Cd-Nvn">
-                                <rect key="frame" x="82" y="101" width="250" height="694"/>
+                            <stackView opaque="NO" contentMode="center" axis="vertical" alignment="center" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="O8o-Cd-Nvn">
+                                <rect key="frame" x="0.0" y="114" width="414" height="668"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alias_logo" translatesAutoresizingMaskIntoConstraints="NO" id="1gC-cW-iS3">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                        <rect key="frame" x="82" y="0.0" width="250" height="250"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="Wdd-YT-c3X"/>
                                             <constraint firstAttribute="width" constant="250" id="eMN-2I-oNO"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="dcI-gR-zLN">
-                                        <rect key="frame" x="14.5" y="442" width="221.5" height="252"/>
+                                    <stackView opaque="NO" contentMode="center" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dcI-gR-zLN">
+                                        <rect key="frame" x="16" y="450" width="382" height="218"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRW-Oh-46y">
-                                                <rect key="frame" x="0.0" y="0.0" width="221.5" height="62"/>
-                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="62"/>
+                                                <color key="backgroundColor" name="Violet"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Играть">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="wfY-mP-xQT" kind="showDetail" id="BxN-Ts-Set"/>
+                                                    <segue destination="wfY-mP-xQT" kind="show" id="BxN-Ts-Set"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dl9-7g-Vi6">
-                                                <rect key="frame" x="0.0" y="95" width="221.5" height="62"/>
-                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <rect key="frame" x="0.0" y="78" width="382" height="62"/>
+                                                <color key="backgroundColor" name="Violet"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Настройки">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="Ds2-as-nWE" kind="showDetail" id="P8Z-8X-0Ga"/>
+                                                    <segue destination="Ds2-as-nWE" kind="show" id="7n8-qs-9si"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1kk-Iy-anv">
-                                                <rect key="frame" x="0.0" y="190" width="221.5" height="62"/>
-                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <rect key="frame" x="0.0" y="156" width="382" height="62"/>
+                                                <color key="backgroundColor" name="Violet"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Об игре">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="wjR-1R-6h9" kind="showDetail" id="D2d-BJ-d8T"/>
+                                                    <segue destination="wjR-1R-6h9" kind="show" id="D2d-BJ-d8T"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dcI-gR-zLN" secondAttribute="trailing" constant="16" id="0wt-ou-0k3"/>
+                                    <constraint firstItem="dcI-gR-zLN" firstAttribute="leading" secondItem="O8o-Cd-Nvn" secondAttribute="leading" constant="16" id="fyJ-4k-XxG"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O8o-Cd-Nvn" secondAttribute="trailing" id="BEs-vD-ipe"/>
                             <constraint firstItem="O8o-Cd-Nvn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Cgk-wS-vUf"/>
+                            <constraint firstItem="O8o-Cd-Nvn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fS9-SG-yae"/>
                             <constraint firstItem="O8o-Cd-Nvn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zQe-h9-ruI"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="VWQ-VJ-Ic8"/>
+                    <connections>
+                        <outlet property="aboutGameButton" destination="1kk-Iy-anv" id="bZO-9z-dfK"/>
+                        <outlet property="gameButton" destination="ZRW-Oh-46y" id="PQn-8o-e0o"/>
+                        <outlet property="settingsButton" destination="dl9-7g-Vi6" id="VEM-u7-oud"/>
+                        <outlet property="stack" destination="dcI-gR-zLN" id="9gc-Kb-391"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-241" y="96"/>
+            <point key="canvasLocation" x="668.11594202898561" y="95.758928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Controller-->
         <scene sceneID="g6E-O6-UJF">
             <objects>
-                <viewController id="wfY-mP-xQT" sceneMemberID="viewController">
+                <viewController id="wfY-mP-xQT" customClass="GameController" customModule="ChallengeOne" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FaI-vQ-hJo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUr-27-Zx5">
@@ -103,17 +116,18 @@
                         <viewLayoutGuide key="safeArea" id="tnx-gB-abt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Ae3-8I-f5I"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uG1-Mr-sHV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="616" y="-258"/>
+            <point key="canvasLocation" x="1526.0869565217392" y="-258.48214285714283"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings Controller-->
         <scene sceneID="DDs-dG-HLx">
             <objects>
-                <viewController id="Ds2-as-nWE" sceneMemberID="viewController">
+                <viewController id="Ds2-as-nWE" customClass="SettingsController" customModule="ChallengeOne" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pOy-oo-AMN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exY-Mi-fdB">
@@ -127,30 +141,25 @@
                         <viewLayoutGuide key="safeArea" id="Ykw-vW-fqn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2Ke-yB-Gl7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pz-v8-lXv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1378" y="96"/>
+            <point key="canvasLocation" x="2286.9565217391305" y="95.758928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--About Controller-->
         <scene sceneID="v0E-FG-l0U">
             <objects>
-                <viewController id="wjR-1R-6h9" sceneMemberID="viewController">
+                <viewController id="wjR-1R-6h9" customClass="AboutController" customModule="ChallengeOne" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gcX-6Q-WMz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGQ-VR-G4M">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hGQ-VR-G4M">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Правила игры" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nki-8n-b71">
-                                        <rect key="frame" x="50" y="25" width="314" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <color key="textColor" name="Violet"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vOK-JD-SP7">
-                                        <rect key="frame" x="32" y="81" width="350" height="680"/>
+                                        <rect key="frame" x="16" y="16" width="382" height="742"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Alias: Скажи Иначе">
@@ -166,7 +175,7 @@ Cg
 </string>
                                                 <attributes>
                                                     <color key="NSColor" systemColor="labelColor"/>
-                                                    <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="14"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -176,7 +185,7 @@ Cg
 </string>
                                                 <attributes>
                                                     <color key="NSColor" systemColor="labelColor"/>
-                                                    <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="14"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
@@ -193,7 +202,7 @@ Cg
 </string>
                                                 <attributes>
                                                     <color key="NSColor" systemColor="labelColor"/>
-                                                    <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="14"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -206,7 +215,7 @@ Cg
 </string>
                                                 <attributes>
                                                     <color key="NSColor" systemColor="labelColor"/>
-                                                    <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="14"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="Начисление очков">
@@ -217,7 +226,7 @@ Cg
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">
+                                                <string key="content">
 За каждое отгаданное слово команда получает 1 очко, а за пропущенное или отгаданное с нарушением - штрафуется (в зависимости от настроек). 
 
 Если объясняющий игрок допускает ошибку - например, называет часть слова, указанного в карточке, слово не будет принято и команда потеряет 1 очко. Поэтому каждая команда должна внимательно слушать объяснения других команд. Если слово кажется слишком тяжелым, вы можете его пропустить, но за это вы потеряете очки. Однако, иногда это того стоит, так как вы можете сэкономить время.
@@ -226,10 +235,10 @@ Cg
 
 Победителем считается команда, набравшая необходимое для победы количество очков. Если на момент завершения победного раунда у команд одинаковое количество очков - проводится дополнительный раунд (Овертайм). 
 
-</mutableString>
+</string>
                                                 <attributes>
                                                     <color key="NSColor" systemColor="labelColor"/>
-                                                    <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="14"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="Задания">
@@ -245,7 +254,7 @@ Cg
 Если вам удастся обьяснить все слова в соответствии с заданием, то ваша команда получает бонусные очки, но только если другие команды считает ваше выполнение убедительным. Количество бонусным баллов определяется случайно в интервале от 7 до 10.</string>
                                                 <attributes>
                                                     <color key="NSColor" systemColor="labelColor"/>
-                                                    <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="14"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -253,43 +262,53 @@ Cg
                                     </textView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="vOK-JD-SP7" firstAttribute="centerY" secondItem="hGQ-VR-G4M" secondAttribute="centerY" id="29b-M3-kQH"/>
-                                    <constraint firstItem="vOK-JD-SP7" firstAttribute="top" secondItem="nki-8n-b71" secondAttribute="bottom" constant="20" id="7AQ-QW-OAz"/>
-                                    <constraint firstItem="vOK-JD-SP7" firstAttribute="centerX" secondItem="hGQ-VR-G4M" secondAttribute="centerX" id="8wx-fU-1Ka"/>
-                                    <constraint firstItem="Nc4-hn-bGi" firstAttribute="trailing" secondItem="nki-8n-b71" secondAttribute="trailing" constant="50" id="JKG-2h-JZj"/>
-                                    <constraint firstAttribute="trailing" secondItem="vOK-JD-SP7" secondAttribute="trailing" constant="31" id="Uqa-kl-xIt"/>
-                                    <constraint firstItem="nki-8n-b71" firstAttribute="leading" secondItem="Nc4-hn-bGi" secondAttribute="leading" constant="50" id="fML-5R-Ctj"/>
-                                    <constraint firstItem="nki-8n-b71" firstAttribute="top" secondItem="Nc4-hn-bGi" secondAttribute="top" constant="25" id="hr5-jF-5AJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="vOK-JD-SP7" secondAttribute="bottom" constant="81" id="kDS-JV-eAh"/>
-                                    <constraint firstItem="vOK-JD-SP7" firstAttribute="leading" secondItem="Nc4-hn-bGi" secondAttribute="leading" constant="32" id="mqB-3U-M9k"/>
+                                    <constraint firstItem="vOK-JD-SP7" firstAttribute="top" secondItem="Nc4-hn-bGi" secondAttribute="top" constant="16" id="3HH-5t-cfz"/>
+                                    <constraint firstItem="vOK-JD-SP7" firstAttribute="centerY" secondItem="hGQ-VR-G4M" secondAttribute="centerY" id="OHv-Fe-ivO"/>
+                                    <constraint firstItem="Nc4-hn-bGi" firstAttribute="bottom" secondItem="vOK-JD-SP7" secondAttribute="bottom" constant="16" id="T7d-sT-0mv"/>
+                                    <constraint firstItem="Nc4-hn-bGi" firstAttribute="trailing" secondItem="vOK-JD-SP7" secondAttribute="trailing" constant="16" id="c93-p7-HVk"/>
+                                    <constraint firstItem="vOK-JD-SP7" firstAttribute="leading" secondItem="Nc4-hn-bGi" secondAttribute="leading" constant="16" id="lWi-uL-EEQ"/>
+                                    <constraint firstItem="vOK-JD-SP7" firstAttribute="centerX" secondItem="hGQ-VR-G4M" secondAttribute="centerX" id="vRq-MC-RbO"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="66M-H1-Cnx"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Nc4-hn-bGi"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7cQ-Nx-cOx"/>
-                        <color key="backgroundColor" name="BrandBlue"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hGQ-VR-G4M" firstAttribute="bottom" secondItem="7cQ-Nx-cOx" secondAttribute="bottom" id="9R4-M5-10F"/>
-                            <constraint firstItem="hGQ-VR-G4M" firstAttribute="trailing" secondItem="7cQ-Nx-cOx" secondAttribute="trailing" id="DUs-g2-7f7"/>
-                            <constraint firstItem="hGQ-VR-G4M" firstAttribute="leading" secondItem="7cQ-Nx-cOx" secondAttribute="leading" id="uWh-sd-rr9"/>
-                            <constraint firstItem="hGQ-VR-G4M" firstAttribute="top" secondItem="gcX-6Q-WMz" secondAttribute="top" id="wrM-lr-jfy"/>
+                            <constraint firstAttribute="bottom" secondItem="hGQ-VR-G4M" secondAttribute="bottom" constant="34" id="0tp-5a-LMX"/>
+                            <constraint firstAttribute="trailing" secondItem="hGQ-VR-G4M" secondAttribute="trailing" id="Xsw-qE-QwE"/>
+                            <constraint firstItem="hGQ-VR-G4M" firstAttribute="leading" secondItem="gcX-6Q-WMz" secondAttribute="leading" id="hif-Vk-3UY"/>
+                            <constraint firstItem="hGQ-VR-G4M" firstAttribute="top" secondItem="7cQ-Nx-cOx" secondAttribute="top" id="qs7-XB-dFS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nBq-Nm-dg3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7wx-vM-ZI8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="614.49275362318849" y="472.76785714285711"/>
+            <point key="canvasLocation" x="1524.6376811594205" y="472.76785714285711"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8hW-Hu-pxF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q6A-CZ-vmR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eM6-ql-8vz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DlL-Oo-1Gp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kN2-Nk-ozv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-242.0289855072464" y="95.758928571428569"/>
         </scene>
     </scenes>
     <resources>
         <image name="alias_logo" width="776" height="540"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="BrandBlue">
-            <color red="0.16078431372549021" green="0.82745098039215681" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Violet">
             <color red="0.43529411764705883" green="0.27058823529411763" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
