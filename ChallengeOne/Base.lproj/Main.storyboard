@@ -140,21 +140,146 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="about" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="StX-ut-zHZ">
-                                <rect key="frame" x="164" y="189" width="44" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGQ-VR-G4M">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Правила игры" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nki-8n-b71">
+                                        <rect key="frame" x="50" y="25" width="314" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" name="Violet"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vOK-JD-SP7">
+                                        <rect key="frame" x="32" y="81" width="350" height="680"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Alias: Скажи Иначе">
+                                                <attributes>
+                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                    <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                    <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">В игру играют командами из двух и более человек. Задача каждого игрока команды - объяснить как можно больше слов отображаемых на экране за ограниченное время другими словами, используя, например, синонимы, антонимы и подсказки так, чтобы члены вашей команды смогли отгадать как можно больше слов прежде, чем истечет время. Чем больше слов отгадала команда, тем больше она заработает баллов.
+
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                    <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">Объяснение слов
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                    <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                                    <font key="NSOriginalFont" size="14" name="Helvetica-Bold"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">При объяснении слов нельзя упоминать какую-либо часть слова. Например, слово «кофеварка» нельзя объяснить как «аппарат для варки кофе». Правильный способ объяснения будет следующий: «аппарат для приготовления крепкого напитка, который обычно пьют за завтраком». Можно использовать синонимы - то есть вы можете сказать «кипятить», но не «варить».
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                    <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
+Вы можете использовать антонимы: слово «большой» может быть объяснено как «антоним слова маленький». Вы не можете использовать иностранные языки, за исключением тех случаев, когда все игроки согласились с этим.
+
+Отгаданное слово должно точно совпадать. Объясняющий игрок помогает отгадывающим найти правильную форму слова. Если слово состоит из двух частей и кто-то отгадывает первую часть, вы потом можете использовать эту часть слова в дальнейшем объяснении.
+
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                    <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Начисление очков">
+                                                <attributes>
+                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                    <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                                    <font key="NSOriginalFont" size="14" name="Helvetica-Bold"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <mutableString key="content">
+За каждое отгаданное слово команда получает 1 очко, а за пропущенное или отгаданное с нарушением - штрафуется (в зависимости от настроек). 
+
+Если объясняющий игрок допускает ошибку - например, называет часть слова, указанного в карточке, слово не будет принято и команда потеряет 1 очко. Поэтому каждая команда должна внимательно слушать объяснения других команд. Если слово кажется слишком тяжелым, вы можете его пропустить, но за это вы потеряете очки. Однако, иногда это того стоит, так как вы можете сэкономить время.
+
+«Последнее слово для всех» - если включена эта опция, по истечении времени раунда, слово могут отгадывать все команды. В этом случае 1 очко получит команда, отгадавшая слово. 
+
+Победителем считается команда, набравшая необходимое для победы количество очков. Если на момент завершения победного раунда у команд одинаковое количество очков - проводится дополнительный раунд (Овертайм). 
+
+</mutableString>
+                                                <attributes>
+                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                    <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Задания">
+                                                <attributes>
+                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                    <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                                    <font key="NSOriginalFont" size="14" name="Helvetica-Bold"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
+Если в раунде есть задание - команда может получить бонусные баллы за его выполнение.
+Если вам удастся обьяснить все слова в соответствии с заданием, то ваша команда получает бонусные очки, но только если другие команды считает ваше выполнение убедительным. Количество бонусным баллов определяется случайно в интервале от 7 до 10.</string>
+                                                <attributes>
+                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                    <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vOK-JD-SP7" firstAttribute="centerY" secondItem="hGQ-VR-G4M" secondAttribute="centerY" id="29b-M3-kQH"/>
+                                    <constraint firstItem="vOK-JD-SP7" firstAttribute="top" secondItem="nki-8n-b71" secondAttribute="bottom" constant="20" id="7AQ-QW-OAz"/>
+                                    <constraint firstItem="vOK-JD-SP7" firstAttribute="centerX" secondItem="hGQ-VR-G4M" secondAttribute="centerX" id="8wx-fU-1Ka"/>
+                                    <constraint firstItem="Nc4-hn-bGi" firstAttribute="trailing" secondItem="nki-8n-b71" secondAttribute="trailing" constant="50" id="JKG-2h-JZj"/>
+                                    <constraint firstAttribute="trailing" secondItem="vOK-JD-SP7" secondAttribute="trailing" constant="31" id="Uqa-kl-xIt"/>
+                                    <constraint firstItem="nki-8n-b71" firstAttribute="leading" secondItem="Nc4-hn-bGi" secondAttribute="leading" constant="50" id="fML-5R-Ctj"/>
+                                    <constraint firstItem="nki-8n-b71" firstAttribute="top" secondItem="Nc4-hn-bGi" secondAttribute="top" constant="25" id="hr5-jF-5AJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="vOK-JD-SP7" secondAttribute="bottom" constant="81" id="kDS-JV-eAh"/>
+                                    <constraint firstItem="vOK-JD-SP7" firstAttribute="leading" secondItem="Nc4-hn-bGi" secondAttribute="leading" constant="32" id="mqB-3U-M9k"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="66M-H1-Cnx"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Nc4-hn-bGi"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7cQ-Nx-cOx"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BrandBlue"/>
+                        <constraints>
+                            <constraint firstItem="hGQ-VR-G4M" firstAttribute="bottom" secondItem="7cQ-Nx-cOx" secondAttribute="bottom" id="9R4-M5-10F"/>
+                            <constraint firstItem="hGQ-VR-G4M" firstAttribute="trailing" secondItem="7cQ-Nx-cOx" secondAttribute="trailing" id="DUs-g2-7f7"/>
+                            <constraint firstItem="hGQ-VR-G4M" firstAttribute="leading" secondItem="7cQ-Nx-cOx" secondAttribute="leading" id="uWh-sd-rr9"/>
+                            <constraint firstItem="hGQ-VR-G4M" firstAttribute="top" secondItem="gcX-6Q-WMz" secondAttribute="top" id="wrM-lr-jfy"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7wx-vM-ZI8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="616" y="473"/>
+            <point key="canvasLocation" x="614.49275362318849" y="472.76785714285711"/>
         </scene>
     </scenes>
     <resources>
@@ -162,6 +287,15 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="BrandBlue">
+            <color red="0.16078431372549021" green="0.82745098039215681" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Violet">
+            <color red="0.43529411764705883" green="0.27058823529411763" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
