@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q6A-CZ-vmR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q6A-CZ-vmR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -105,46 +105,116 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="uWD-5f-hUL">
-                                <rect key="frame" x="156" y="709" width="103.5" height="153"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="215" translatesAutoresizingMaskIntoConstraints="NO" id="pcw-A1-EHL">
+                                <rect key="frame" x="16" y="88" width="382" height="774"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeR-Sw-acl">
-                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Правильно">
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKn-gF-feT">
-                                        <rect key="frame" x="0.0" y="61" width="103.5" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Пропустить">
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAF-Vh-1zI">
-                                        <rect key="frame" x="0.0" y="122" width="103.5" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Сбросить">
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="WSX-UN-RxN">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="69.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Qh-yy-Kwd">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv9-iN-p52">
+                                                <rect key="frame" x="0.0" y="24.5" width="382" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTu-qf-KF5">
+                                                <rect key="frame" x="0.0" y="49" width="382" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="BrandBlue"/>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDs-y0-kIt">
+                                        <rect key="frame" x="170.5" y="306.5" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="uWD-5f-hUL">
+                                        <rect key="frame" x="32" y="564" width="318" height="210"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeR-Sw-acl">
+                                                <rect key="frame" x="0.0" y="0.0" width="318" height="50"/>
+                                                <color key="backgroundColor" name="Violet"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Правильно">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="trueButtonPressed:" destination="wfY-mP-xQT" eventType="touchUpInside" id="6ib-m9-6HA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKn-gF-feT">
+                                                <rect key="frame" x="0.0" y="80" width="318" height="50"/>
+                                                <color key="backgroundColor" name="Violet"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Пропустить">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="skipButtonPressed:" destination="wfY-mP-xQT" eventType="touchUpInside" id="HcS-WC-Owk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAF-Vh-1zI">
+                                                <rect key="frame" x="0.0" y="160" width="318" height="50"/>
+                                                <color key="backgroundColor" name="Violet"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Сбросить">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="resetButtonPressed:" destination="wfY-mP-xQT" eventType="touchUpInside" id="iaJ-iZ-GMQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </stackView>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                <constraints>
+                                    <constraint firstItem="WSX-UN-RxN" firstAttribute="top" secondItem="pcw-A1-EHL" secondAttribute="top" id="4Q3-fV-gRj"/>
+                                    <constraint firstItem="uWD-5f-hUL" firstAttribute="leading" secondItem="pcw-A1-EHL" secondAttribute="leading" id="5c6-BU-rdj"/>
+                                    <constraint firstAttribute="bottom" secondItem="uWD-5f-hUL" secondAttribute="bottom" constant="16" id="Chc-T8-5QG"/>
+                                    <constraint firstAttribute="trailing" secondItem="uWD-5f-hUL" secondAttribute="trailing" id="Kxd-WK-9Lf"/>
+                                    <constraint firstItem="uWD-5f-hUL" firstAttribute="leading" secondItem="pcw-A1-EHL" secondAttribute="leading" constant="32" id="R3i-bz-4Gl"/>
+                                    <constraint firstItem="WSX-UN-RxN" firstAttribute="leading" secondItem="pcw-A1-EHL" secondAttribute="leading" id="TlL-fN-vek"/>
+                                    <constraint firstAttribute="trailing" secondItem="WSX-UN-RxN" secondAttribute="trailing" id="V7B-Mg-J53"/>
+                                    <constraint firstAttribute="trailing" secondItem="uWD-5f-hUL" secondAttribute="trailing" constant="32" id="rng-8N-A3w"/>
+                                </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTu-qf-KF5">
-                                <rect key="frame" x="136.51712274952752" y="393.45623946092996" width="138.00000000000011" height="112.00000000000006"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tnx-gB-abt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pcw-A1-EHL" firstAttribute="top" secondItem="tnx-gB-abt" secondAttribute="top" id="27x-4n-dkm"/>
+                            <constraint firstItem="tnx-gB-abt" firstAttribute="trailing" secondItem="pcw-A1-EHL" secondAttribute="trailing" constant="16" id="JRW-4g-M4c"/>
+                            <constraint firstItem="tnx-gB-abt" firstAttribute="bottom" secondItem="pcw-A1-EHL" secondAttribute="bottom" id="lrC-Y0-Osj"/>
+                            <constraint firstItem="pcw-A1-EHL" firstAttribute="leading" secondItem="tnx-gB-abt" secondAttribute="leading" constant="16" id="ypd-Qa-Btq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ae3-8I-f5I"/>
                     <connections>
+                        <outlet property="pointLabel" destination="8Qh-yy-Kwd" id="OE1-Ch-Xi9"/>
+                        <outlet property="qustionCountLabel" destination="gv9-iN-p52" id="9Ul-Zp-Dif"/>
+                        <outlet property="resetButton" destination="IAF-Vh-1zI" id="9Ed-OL-8bI"/>
+                        <outlet property="skipButton" destination="NKn-gF-feT" id="EsQ-L3-f4R"/>
                         <outlet property="timerTextLabel" destination="BTu-qf-KF5" id="204-Mu-x8I"/>
+                        <outlet property="trueButton" destination="IeR-Sw-acl" id="qoe-Za-hGu"/>
+                        <outlet property="wordLabel" destination="KDs-y0-kIt" id="4sY-Un-YbT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uG1-Mr-sHV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -445,6 +515,9 @@ Cg
     </scenes>
     <resources>
         <image name="alias_logo" width="776" height="540"/>
+        <namedColor name="BrandBlue">
+            <color red="0.16078431372549021" green="0.82745098039215681" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Violet">
             <color red="0.43529411764705883" green="0.27058823529411763" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -453,6 +526,9 @@ Cg
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
