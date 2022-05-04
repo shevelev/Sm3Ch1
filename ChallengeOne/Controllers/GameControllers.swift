@@ -46,6 +46,9 @@ class GameController: UIViewController {
         
         timerFunc()
         
+        let url = "https://joke.deno.dev/"
+        getData(from: url)
+        
     }
     
     func loadUI() {
@@ -81,6 +84,36 @@ class GameController: UIViewController {
         pointLabel.text = "Очки: \(gameModel.point)"
         qustionCountLabel.text = "Вопрос: \(gameModel.count)"
         wordLabel.text = gameModel.getWord()
+    }
+    
+    func getData(from url: String) {
+        
+        let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { data, response, error in
+            
+            guard let data = data, error == nil else {
+                print("Something went wrong")
+                return
+            }
+            //have data
+            
+            var results: Response?
+            do {
+                results = try JSONDecoder().decode(Response.self, from: data)
+            }
+            catch {
+                print("Error occurs - \(error)")
+            }
+            
+            guard let json = results else {
+                return
+            }
+            
+            print(json.setup)
+            print(json.punchline)
+        })
+            
+            task.resume()
+        
     }
     
     func timerFunc() {

@@ -22,6 +22,7 @@
 		C958B2F3281F0A440038BBB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C958B2F2281F0A440038BBB5 /* Assets.xcassets */; };
 		C958B2F6281F0A440038BBB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C958B2F4281F0A440038BBB5 /* LaunchScreen.storyboard */; };
 		FA0C4FBE28218D6C0044C048 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C4FBD28218D6C0044C048 /* Questions.swift */; };
+		FA6A2AB62822C89700F88921 /* RandomJokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A2AB52822C89700F88921 /* RandomJokeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		C958B2F5281F0A440038BBB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C958B2F7281F0A440038BBB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA0C4FBD28218D6C0044C048 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		FA6A2AB52822C89700F88921 /* RandomJokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				FA0C4FBD28218D6C0044C048 /* Questions.swift */,
 				C92B7E7F282273B6009DCAA5 /* GameModel.swift */,
+				FA6A2AB52822C89700F88921 /* RandomJokeModel.swift */,
 				C92B7E812822D20A009DCAA5 /* SettingsModel.swift */,
 				C92B7E832822D67F009DCAA5 /* DataManager.swift */,
 			);
@@ -197,6 +200,7 @@
 				C958B2EE281F0A410038BBB5 /* ViewController.swift in Sources */,
 				C958B2EA281F0A410038BBB5 /* AppDelegate.swift in Sources */,
 				FA0C4FBE28218D6C0044C048 /* Questions.swift in Sources */,
+				FA6A2AB62822C89700F88921 /* RandomJokeModel.swift in Sources */,
 				C958B2EC281F0A410038BBB5 /* SceneDelegate.swift in Sources */,
 				C92B7E80282273B6009DCAA5 /* GameModel.swift in Sources */,
 				C92B7E7C2820626E009DCAA5 /* GameControllers.swift in Sources */,
