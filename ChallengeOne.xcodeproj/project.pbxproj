@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B43CD9BC2822BEF600F5BFF4 /* Пропустить.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B43CD9BA2822BEF600F5BFF4 /* Пропустить.mp3 */; };
+		B43CD9BD2822BEF600F5BFF4 /* Правильно.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B43CD9BB2822BEF600F5BFF4 /* Правильно.mp3 */; };
 		C92B7E7A2820625D009DCAA5 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92B7E792820625D009DCAA5 /* SettingsController.swift */; };
 		C92B7E7C2820626E009DCAA5 /* GameControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92B7E7B2820626E009DCAA5 /* GameControllers.swift */; };
 		C92B7E7E28206349009DCAA5 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92B7E7D28206349009DCAA5 /* AboutController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B43CD9BA2822BEF600F5BFF4 /* Пропустить.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Пропустить.mp3"; sourceTree = "<group>"; };
+		B43CD9BB2822BEF600F5BFF4 /* Правильно.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Правильно.mp3"; sourceTree = "<group>"; };
 		C92B7E792820625D009DCAA5 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		C92B7E7B2820626E009DCAA5 /* GameControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameControllers.swift; sourceTree = "<group>"; };
 		C92B7E7D28206349009DCAA5 /* AboutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				C958B2F2281F0A440038BBB5 /* Assets.xcassets */,
 				C958B2F4281F0A440038BBB5 /* LaunchScreen.storyboard */,
 				C958B2F7281F0A440038BBB5 /* Info.plist */,
+				B43CD9BB2822BEF600F5BFF4 /* Правильно.mp3 */,
+				B43CD9BA2822BEF600F5BFF4 /* Пропустить.mp3 */,
 			);
 			path = ChallengeOne;
 			sourceTree = "<group>";
@@ -164,9 +170,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B43CD9BC2822BEF600F5BFF4 /* Пропустить.mp3 in Resources */,
 				C958B2F6281F0A440038BBB5 /* LaunchScreen.storyboard in Resources */,
 				C958B2F3281F0A440038BBB5 /* Assets.xcassets in Resources */,
 				C958B2F1281F0A420038BBB5 /* Main.storyboard in Resources */,
+				B43CD9BD2822BEF600F5BFF4 /* Правильно.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
