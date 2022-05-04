@@ -21,8 +21,9 @@ class ViewController: UIViewController {
         gameButton.layer.cornerRadius = gameButton.frame.height / 2
         settingsButton.layer.cornerRadius = settingsButton.frame.height / 2
         aboutGameButton.layer.cornerRadius = aboutGameButton.frame.height / 2
+    
     }
 
-
 }
+
 
