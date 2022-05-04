@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="center" axis="vertical" alignment="center" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="O8o-Cd-Nvn">
+                            <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalSpacing" alignment="center" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="O8o-Cd-Nvn">
                                 <rect key="frame" x="0.0" y="114" width="414" height="668"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alias_logo" translatesAutoresizingMaskIntoConstraints="NO" id="1gC-cW-iS3">
@@ -28,14 +28,13 @@
                                             <constraint firstAttribute="width" constant="250" id="eMN-2I-oNO"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="center" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dcI-gR-zLN">
+                                    <stackView opaque="NO" contentMode="center" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dcI-gR-zLN">
                                         <rect key="frame" x="16" y="450" width="382" height="218"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRW-Oh-46y">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="62"/>
                                                 <color key="backgroundColor" name="Violet"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Играть">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                                 </buttonConfiguration>
@@ -45,7 +44,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dl9-7g-Vi6">
                                                 <rect key="frame" x="0.0" y="78" width="382" height="62"/>
-                                                <color key="backgroundColor" name="Violet"/>
+                                                <color key="backgroundColor" name="BrandBlue"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Настройки">
@@ -57,11 +56,14 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1kk-Iy-anv">
                                                 <rect key="frame" x="0.0" y="156" width="382" height="62"/>
-                                                <color key="backgroundColor" name="Violet"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Об игре">
+                                                    <backgroundConfiguration key="background" cornerRadius="35" strokeWidth="5">
+                                                        <color key="strokeColor" name="Violet"/>
+                                                    </backgroundConfiguration>
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
+                                                    <color key="baseForegroundColor" name="Violet"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <segue destination="wjR-1R-6h9" kind="show" id="D2d-BJ-d8T"/>
@@ -79,10 +81,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="O8o-Cd-Nvn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Lj-Um-YMi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O8o-Cd-Nvn" secondAttribute="trailing" id="BEs-vD-ipe"/>
-                            <constraint firstItem="O8o-Cd-Nvn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Cgk-wS-vUf"/>
+                            <constraint firstItem="O8o-Cd-Nvn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bCH-ya-u7a"/>
                             <constraint firstItem="O8o-Cd-Nvn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fS9-SG-yae"/>
-                            <constraint firstItem="O8o-Cd-Nvn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zQe-h9-ruI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VWQ-VJ-Ic8"/>
