@@ -340,7 +340,13 @@
                             <constraint firstItem="Ykw-vW-fqn" firstAttribute="trailing" secondItem="Pxp-1j-h9J" secondAttribute="trailing" constant="16" id="kh1-l7-L16"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2Ke-yB-Gl7"/>
+                    <navigationItem key="navigationItem" title="Title" id="AI7-kX-cBs">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="bON-dy-jf3">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="Ds2-as-nWE" id="5vS-w1-qRH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="comandCountLabel" destination="z00-Lb-txe" id="t7P-9v-jEO"/>
                         <outlet property="roundTime" destination="GRC-WF-U7B" id="6ST-cT-d3C"/>
