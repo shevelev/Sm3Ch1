@@ -5,13 +5,18 @@
 //  Created by Сергей Шевелев on 02.05.2022.
 //
 import UIKit
+import AVFoundation
 
 class GameController: UIViewController {
     
     var gameModel = GameModel()
+    var settings: Settings?
     
     var timer = Timer()
-    var timeLeft = 60
+
+    var player: AVAudioPlayer?
+    var timeLeft = 10
+
     
     
     @IBOutlet weak var qustionCountLabel: UILabel!
@@ -24,15 +29,16 @@ class GameController: UIViewController {
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Игра"
         
-        pointLabel.text = "Очки: \(gameModel.point)"
-        qustionCountLabel.text = "Вопрос: \(gameModel.count)"
+        settings = DataManager.loadSettings()
+        
+        loadUI()
+        
+
         
         trueButton.layer.cornerRadius = trueButton.frame.height / 2
         skipButton.layer.cornerRadius = skipButton.frame.height / 2
@@ -45,19 +51,32 @@ class GameController: UIViewController {
         
     }
     
+    func loadUI() {
+        timeLeft = settings?.timeToWin ?? 100
+        pointLabel.text = "Очки: \(gameModel.point)"
+        qustionCountLabel.text = "Вопрос: \(gameModel.count)"
+        timerTextLabel.text = "Таймер: \(self.timeLeft)"
+    }
+    
     @IBAction func trueButtonPressed(_ sender: UIButton) {
         gameModel.trueAn()
         updateUI()
+        playSound(soundName: sender.titleLabel!.text!)
+        print(sender.titleLabel!.text!)
+        
     }
     
     @IBAction func skipButtonPressed(_ sender: UIButton) {
         gameModel.skip()
         updateUI()
+        playSound(soundName: sender.titleLabel!.text!)
+        print(sender.titleLabel!.text!)
     }
     
     @IBAction func resetButtonPressed(_ sender: Any) {
         gameModel.reset()
         updateUI()
+
     }
     
     
@@ -111,5 +130,17 @@ class GameController: UIViewController {
             }
         }
     }
-    
+    func playSound(soundName: String) {
+        guard let path = Bundle.main.path(forResource: soundName, ofType:"mp3") else {
+            return }
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
 }
