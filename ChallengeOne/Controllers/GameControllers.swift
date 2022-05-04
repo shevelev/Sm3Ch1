@@ -5,6 +5,7 @@
 //  Created by Сергей Шевелев on 02.05.2022.
 //
 import UIKit
+import AVFoundation
 
 class GameController: UIViewController {
     
@@ -12,7 +13,10 @@ class GameController: UIViewController {
     var settings: Settings?
     
     var timer = Timer()
+
+    var player: AVAudioPlayer?
     var timeLeft = 10
+
     
     
     @IBOutlet weak var qustionCountLabel: UILabel!
@@ -54,16 +58,22 @@ class GameController: UIViewController {
     @IBAction func trueButtonPressed(_ sender: UIButton) {
         gameModel.trueAn()
         updateUI()
+        playSound(soundName: sender.titleLabel!.text!)
+        print(sender.titleLabel!.text!)
+        
     }
     
     @IBAction func skipButtonPressed(_ sender: UIButton) {
         gameModel.skip()
         updateUI()
+        playSound(soundName: sender.titleLabel!.text!)
+        print(sender.titleLabel!.text!)
     }
     
     @IBAction func resetButtonPressed(_ sender: Any) {
         gameModel.reset()
         updateUI()
+
     }
     
     
@@ -87,5 +97,17 @@ class GameController: UIViewController {
             }
         }
     }
-    
+    func playSound(soundName: String) {
+        guard let path = Bundle.main.path(forResource: soundName, ofType:"mp3") else {
+            return }
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
 }
