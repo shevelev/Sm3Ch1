@@ -9,9 +9,10 @@ import UIKit
 class GameController: UIViewController {
     
     var gameModel = GameModel()
+    var settings: Settings?
     
     var timer = Timer()
-    var timeLeft = 60
+    var timeLeft = 10
     
     
     @IBOutlet weak var qustionCountLabel: UILabel!
@@ -24,15 +25,16 @@ class GameController: UIViewController {
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Игра"
         
-        pointLabel.text = "Очки: \(gameModel.point)"
-        qustionCountLabel.text = "Вопрос: \(gameModel.count)"
+        settings = DataManager.loadSettings()
+        
+        loadUI()
+        
+
         
         trueButton.layer.cornerRadius = trueButton.frame.height / 2
         skipButton.layer.cornerRadius = skipButton.frame.height / 2
@@ -40,6 +42,13 @@ class GameController: UIViewController {
         
         timerFunc()
         
+    }
+    
+    func loadUI() {
+        timeLeft = settings?.timeToWin ?? 100
+        pointLabel.text = "Очки: \(gameModel.point)"
+        qustionCountLabel.text = "Вопрос: \(gameModel.count)"
+        timerTextLabel.text = "Таймер: \(self.timeLeft)"
     }
     
     @IBAction func trueButtonPressed(_ sender: UIButton) {
