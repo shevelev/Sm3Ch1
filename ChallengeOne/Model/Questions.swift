@@ -10,4 +10,5 @@ import Foundation
 struct Questions: Identifiable {
     let id = UUID()
     let name: String
+
 }
