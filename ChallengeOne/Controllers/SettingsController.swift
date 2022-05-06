@@ -15,7 +15,9 @@ class SettingsController: UIViewController {
     
     @IBOutlet weak var wordSlider: UISlider!
     @IBOutlet weak var timeSlider: UISlider!
-        
+    
+    @IBOutlet weak var wordPicker: UISegmentedControl!
+    
     var settings: Settings?
 
     override func viewDidLoad() {
@@ -34,8 +36,15 @@ class SettingsController: UIViewController {
             comandCountLabel.text = "\(setting.countCommands)"
             
             wordSlider.value = Float(setting.wordToWin)
-            timeSlider.value = Float(setting.timeToWin)    
+            timeSlider.value = Float(setting.timeToWin)
+            wordPicker.selectedSegmentIndex = setting.setOfWords
         }
+    }
+    
+    
+    @IBAction func wordSegmentedPressed(_ sender: UISegmentedControl) {
+        settings?.setOfWords = sender.selectedSegmentIndex
+        print(sender.selectedSegmentIndex)
     }
     
     @IBAction func stepperPressed(_ sender: UIStepper) {

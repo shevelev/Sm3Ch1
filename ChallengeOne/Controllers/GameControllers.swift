@@ -10,12 +10,11 @@ import AVFoundation
 class GameController: UIViewController {
     
     var gameModel = GameModel()
-    var settings: Settings?
-    
     var timer = Timer()
-
     var player: AVAudioPlayer?
+    
     var timeLeft = 10
+    var isPause = false
 
     
     
@@ -23,6 +22,7 @@ class GameController: UIViewController {
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var timerTextLabel: UILabel!
     
+    @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var wordLabel: UILabel!
     
     @IBOutlet weak var trueButton: UIButton!
@@ -34,7 +34,7 @@ class GameController: UIViewController {
 
         title = "Игра"
         
-        settings = DataManager.loadSettings()
+        gameModel.settings = DataManager.loadSettings()
         
         loadUI()
         
@@ -43,26 +43,40 @@ class GameController: UIViewController {
         trueButton.layer.cornerRadius = trueButton.frame.height / 2
         skipButton.layer.cornerRadius = skipButton.frame.height / 2
         resetButton.layer.cornerRadius = resetButton.frame.height / 2
+        startStopButton.layer.cornerRadius = startStopButton.frame.height / 2
         
-        timerFunc()
         
-        let url = "https://joke.deno.dev/"
-        getData(from: url)
+        
+        
         
     }
     
     func loadUI() {
-        timeLeft = settings?.timeToWin ?? 100
+        timeLeft = gameModel.settings?.timeToWin ?? 100
         pointLabel.text = "Очки: \(gameModel.point)"
         qustionCountLabel.text = "Вопрос: \(gameModel.count)"
         timerTextLabel.text = "Таймер: \(self.timeLeft)"
+        startStopButton.setTitle("Старт", for: .normal)
+        wordLabel.text = "Отгадай слово!"
     }
+    
+    @IBAction func startStopButtonPressed(_ sender: UIButton) {
+        wordLabel.text = gameModel.getWord()
+        isPause.toggle()
+        if isPause {
+            timerFunc()
+            startStopButton.setTitle("Пауза", for: .normal)
+        } else {
+            startStopButton.setTitle("Старт", for: .normal)
+            timer.invalidate()
+        }
+    }
+    
     
     @IBAction func trueButtonPressed(_ sender: UIButton) {
         gameModel.trueAn()
         updateUI()
         playSound(soundName: sender.titleLabel!.text!)
-        print(sender.titleLabel!.text!)
         
     }
     
@@ -70,10 +84,9 @@ class GameController: UIViewController {
         gameModel.skip()
         updateUI()
         playSound(soundName: sender.titleLabel!.text!)
-        print(sender.titleLabel!.text!)
     }
     
-    @IBAction func resetButtonPressed(_ sender: Any) {
+    @IBAction func resetButtonPressed(_ sender: UIButton) {
         gameModel.reset()
         updateUI()
 
@@ -86,39 +99,11 @@ class GameController: UIViewController {
         wordLabel.text = gameModel.getWord()
     }
     
-    func getData(from url: String) {
-        
-        let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { data, response, error in
-            
-            guard let data = data, error == nil else {
-                print("Something went wrong")
-                return
-            }
-            //have data
-            
-            var results: Response?
-            do {
-                results = try JSONDecoder().decode(Response.self, from: data)
-            }
-            catch {
-                print("Error occurs - \(error)")
-            }
-            
-            guard let json = results else {
-                return
-            }
-            
-            print(json.setup)
-            print(json.punchline)
-        })
-            
-            task.resume()
-        
-    }
+
     
     func timerFunc() {
         
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             print("timer starts")
             
             self.timeLeft -= 1

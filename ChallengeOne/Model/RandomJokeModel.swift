@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Response: Codable {
-    let setup: String
-    let punchline: String
+struct ResponseJoke: Codable {
+    var setup: String = ""
+    var punchline: String = ""
 }
