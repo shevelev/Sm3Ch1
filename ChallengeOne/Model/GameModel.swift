@@ -10,6 +10,17 @@ import Foundation
 class GameModel {
     
     var settings: Settings?
+    var team: [Team] = [Team]()
+    var questNumber: Int = 0
+    var currentTeam: Int = 0
+    
+    init() {
+        settings = DataManager.loadSettings()
+        //генерация команд
+        for item in 1...(settings?.countCommands ?? 1)  {
+            self.team.append(Team(name: "Команда -= \(item) =-", setOfWord: settings?.setOfWords ?? 0, point: 0, count: 0))
+        }
+    }
     
     var jokeModel = JokeModel()
 
@@ -20,30 +31,30 @@ class GameModel {
 
 
     let questions = [easyQuestions, difficultQuestions]
-    
-    var count = 0
-    var point = 0
-    var questNumber = 0
-    
+
     func skip() {
         questNumber += 1
-        count += 1
-        point -= 1
+        team[currentTeam].count += 1
+        team[currentTeam].point -= 1
     }
     func trueAn() {
         questNumber += 1
-        count += 1
-        point += 1
+        team[currentTeam].count += 1
+        team[currentTeam].point += 1
     }
     
     func reset() {
         questNumber = 0
-        count = 0
-        point = 0
+        team[currentTeam].count = 0
+        team[currentTeam].point = 0
     }
     
     func getWord() -> String {
-        return questions[settings?.setOfWords ?? 0][questNumber]
+        return questions[team[currentTeam].setOfWord][questNumber]
+    }
+    
+    func getTeam() -> Team {
+       return team[currentTeam]
     }
     
 }

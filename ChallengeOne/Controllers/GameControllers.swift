@@ -17,6 +17,7 @@ class GameController: UIViewController {
     var isPause = false
 
     
+    @IBOutlet weak var teamLabel: UILabel!
     
     @IBOutlet weak var qustionCountLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
@@ -34,35 +35,35 @@ class GameController: UIViewController {
 
         title = "Игра"
         
-        gameModel.settings = DataManager.loadSettings()
+        //gameModel.settings = DataManager.loadSettings()
         
         loadUI()
-        
-
-        
+    }
+    
+    func loadUI() {
         trueButton.layer.cornerRadius = trueButton.frame.height / 2
         skipButton.layer.cornerRadius = skipButton.frame.height / 2
         resetButton.layer.cornerRadius = resetButton.frame.height / 2
         startStopButton.layer.cornerRadius = startStopButton.frame.height / 2
         
+        let team = gameModel.getTeam()
         
-        
-        
-        
-    }
-    
-    func loadUI() {
         timeLeft = gameModel.settings?.timeToWin ?? 100
-        pointLabel.text = "Очки: \(gameModel.point)"
-        qustionCountLabel.text = "Вопрос: \(gameModel.count)"
+        pointLabel.text = "Очки: \(team.point)"
+        qustionCountLabel.text = "Вопрос: \(team.count)"
         timerTextLabel.text = "Таймер: \(self.timeLeft)"
         startStopButton.setTitle("Старт", for: .normal)
         wordLabel.text = "Отгадай слово!"
+        teamLabel.text = "Команда -= 1 =-"
     }
     
     @IBAction func startStopButtonPressed(_ sender: UIButton) {
         wordLabel.text = gameModel.getWord()
         isPause.toggle()
+        timerStopStart()
+    }
+    
+    func timerStopStart() {
         if isPause {
             timerFunc()
             startStopButton.setTitle("Пауза", for: .normal)
@@ -88,18 +89,20 @@ class GameController: UIViewController {
     
     @IBAction func resetButtonPressed(_ sender: UIButton) {
         gameModel.reset()
+        startStopButton.setTitle("Старт", for: .normal)
+        timer.invalidate()
+        timeLeft = gameModel.settings?.timeToWin ?? 100
+        timerTextLabel.text = "Таймер: \(self.timeLeft)"
         updateUI()
-
     }
-    
     
     func updateUI() {
-        pointLabel.text = "Очки: \(gameModel.point)"
-        qustionCountLabel.text = "Вопрос: \(gameModel.count)"
+        let team = gameModel.getTeam()
+        pointLabel.text = "Очки: \(team.point)"
+        qustionCountLabel.text = "Вопрос: \(team.count)"
+        teamLabel.text = team.name
         wordLabel.text = gameModel.getWord()
     }
-    
-
     
     func timerFunc() {
         
