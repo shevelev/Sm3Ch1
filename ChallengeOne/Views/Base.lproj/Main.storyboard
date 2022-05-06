@@ -153,6 +153,18 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="uWD-5f-hUL">
                                         <rect key="frame" x="0.0" y="564" width="414" height="210"/>
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FER-2Z-IF5">
+                                                <rect key="frame" x="0.0" y="0.0" width="318" height="44"/>
+                                                <color key="backgroundColor" name="BrandBlue"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="startStopButtonPressed:" destination="wfY-mP-xQT" eventType="touchUpInside" id="Q9F-Ty-OmS"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeR-Sw-acl">
                                                 <rect key="frame" x="32" y="0.0" width="350" height="50"/>
                                                 <color key="backgroundColor" name="Violet"/>
@@ -231,6 +243,7 @@
                         <outlet property="qustionCountLabel" destination="gv9-iN-p52" id="9Ul-Zp-Dif"/>
                         <outlet property="resetButton" destination="IAF-Vh-1zI" id="9Ed-OL-8bI"/>
                         <outlet property="skipButton" destination="NKn-gF-feT" id="EsQ-L3-f4R"/>
+                        <outlet property="startStopButton" destination="FER-2Z-IF5" id="3Hc-Eo-Zyy"/>
                         <outlet property="timerTextLabel" destination="BTu-qf-KF5" id="204-Mu-x8I"/>
                         <outlet property="trueButton" destination="IeR-Sw-acl" id="qoe-Za-hGu"/>
                         <outlet property="wordLabel" destination="KDs-y0-kIt" id="4sY-Un-YbT"/>
@@ -333,6 +346,9 @@
                                             <segment title="Сложно"/>
                                             <segment title="Легко"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="wordSegmentedPressed:" destination="Ds2-as-nWE" eventType="valueChanged" id="3o1-e3-lo6"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -370,6 +386,7 @@
                         <outlet property="comandCountLabel" destination="z00-Lb-txe" id="t7P-9v-jEO"/>
                         <outlet property="roundTime" destination="GRC-WF-U7B" id="6ST-cT-d3C"/>
                         <outlet property="timeSlider" destination="ohr-nU-tyQ" id="XET-AJ-UaX"/>
+                        <outlet property="wordPicker" destination="CdF-9u-aE1" id="clD-b8-hB1"/>
                         <outlet property="wordSlider" destination="pZg-1v-lns" id="ds6-QN-ewB"/>
                         <outlet property="wordToWin" destination="acz-MZ-nOO" id="rzO-lE-fz2"/>
                     </connections>
