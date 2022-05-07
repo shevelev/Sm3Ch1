@@ -19,6 +19,7 @@ class GameController: UIViewController {
     
     @IBOutlet weak var teamLabel: UILabel!
     
+    @IBOutlet weak var round: UILabel!
     @IBOutlet weak var qustionCountLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var timerTextLabel: UILabel!
@@ -49,6 +50,7 @@ class GameController: UIViewController {
         let team = gameModel.getTeam()
         
         timeLeft = gameModel.settings?.timeToWin ?? 100
+        round.text = "Раунд: \(gameModel.round)"
         pointLabel.text = "Очки: \(team.point)"
         qustionCountLabel.text = "Вопрос: \(team.count)"
         timerTextLabel.text = "Таймер: \(self.timeLeft)"
@@ -105,6 +107,7 @@ class GameController: UIViewController {
         qustionCountLabel.text = "Вопрос: \(team.count)"
         teamLabel.text = team.name
         wordLabel.text = gameModel.getWord()
+        round.text = "Раунд: \(gameModel.round)" 
         
         if isPause {
             trueButton.isEnabled = true
@@ -152,22 +155,40 @@ class GameController: UIViewController {
             dialogMessage.addAction(ok)
             self.present(dialogMessage, animated: true, completion: nil)
         } else {
+            if gameModel.round == 4 {
+                let teamWin = gameModel.getWinTeam()
+                
+                let dialogMessage = UIAlertController(title: "Игра завершена", message: "Выиграла команда \(teamWin)", preferredStyle: .alert)
             
-            let teamWin = gameModel.getWinTeam()
+                let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                    self.startStopButton.setTitle("Старт", for: .normal)
+                    self.isPause = false
+                    self.timeLeft = self.gameModel.settings?.timeToWin ?? 100
+                    self.timerTextLabel.text = "Таймер: \(self.timeLeft)"
+                    self.updateUI()
+                    self.gameModel.reset()
+                  })
+                
+                dialogMessage.addAction(ok)
+                self.present(dialogMessage, animated: true, completion: nil)
+            } else {
+                gameModel.nextRound()
+                
+                let dialogMessage = UIAlertController(title: "Начался следующий раунд", message: "Команда готовится", preferredStyle: .alert)
             
-            let dialogMessage = UIAlertController(title: "Игра завершена", message: "Выиграла команда \(teamWin)", preferredStyle: .alert)
-        
-            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-                self.startStopButton.setTitle("Старт", for: .normal)
-                self.isPause = false
-                self.timeLeft = self.gameModel.settings?.timeToWin ?? 100
-                self.timerTextLabel.text = "Таймер: \(self.timeLeft)"
-                self.updateUI()
-                self.gameModel.reset()
-              })
+                let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                    self.startStopButton.setTitle("Старт", for: .normal)
+                    self.isPause = false
+                    self.timeLeft = self.gameModel.settings?.timeToWin ?? 100
+                    self.timerTextLabel.text = "Таймер: \(self.timeLeft)"
+                    self.updateUI()
+                  })
+                
+                dialogMessage.addAction(ok)
+                self.present(dialogMessage, animated: true, completion: nil)
+                
+            }
             
-            dialogMessage.addAction(ok)
-            self.present(dialogMessage, animated: true, completion: nil)
         }
         
         

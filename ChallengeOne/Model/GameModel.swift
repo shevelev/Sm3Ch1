@@ -13,6 +13,7 @@ class GameModel {
     var team: [Team] = [Team]()
     var questNumber: Int = 0
     var currentTeam: Int = 0
+    var round: Int = 1
     
     init() {
         settings = DataManager.loadSettings()
@@ -52,6 +53,7 @@ class GameModel {
         team[currentTeam].count = 0
         team[currentTeam].point = 0
         currentTeam = 0
+        round = 0
         team.removeAll()
         generationTeam()
     }
@@ -70,6 +72,11 @@ class GameModel {
     
     func nextTeam() {
         currentTeam += 1
+    }
+    
+    func nextRound() {
+        round += 1
+        currentTeam = 0
     }
     
     func getWinTeam() -> String {
