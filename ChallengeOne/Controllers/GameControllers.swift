@@ -22,6 +22,7 @@ class GameController: UIViewController {
     @IBOutlet weak var qustionCountLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var timerTextLabel: UILabel!
+    @IBOutlet weak var commandLabel: UILabel!
     
     @IBOutlet weak var wordLabel: UILabel!
     
@@ -53,9 +54,10 @@ class GameController: UIViewController {
     
     func loadUI() {
         timeLeft = settings?.timeToWin ?? 100
-        pointLabel.text = "Очки: \(gameModel.point)"
+        pointLabel.text = "Очки: \(gameModel.point) / \(settings?.wordToWin ?? 100)"
         qustionCountLabel.text = "Вопрос: \(gameModel.count)"
         timerTextLabel.text = "Таймер: \(self.timeLeft)"
+        commandLabel.text = "Команда: \(gameModel.commands)"
     }
     
     @IBAction func trueButtonPressed(_ sender: UIButton) {
@@ -81,9 +83,10 @@ class GameController: UIViewController {
     
     
     func updateUI() {
-        pointLabel.text = "Очки: \(gameModel.point)"
+        pointLabel.text = "Очки: \(gameModel.point) / \(settings?.wordToWin ?? 100)"
         qustionCountLabel.text = "Вопрос: \(gameModel.count)"
         wordLabel.text = gameModel.getWord()
+        commandLabel.text = "Команда: \(gameModel.commands)"
     }
     
     func getData(from url: String) {
@@ -127,6 +130,8 @@ class GameController: UIViewController {
             
             if self.timeLeft == 0 {
                 timer.invalidate()
+                self.performSegue(withIdentifier: "TimesUpSegue", sender: self)
+                
             }
         }
     }

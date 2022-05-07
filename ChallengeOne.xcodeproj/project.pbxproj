@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		089F2A42282661A4007E136F /* TimesUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089F2A41282661A4007E136F /* TimesUpViewController.swift */; };
 		B43CD9BC2822BEF600F5BFF4 /* Пропустить.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B43CD9BA2822BEF600F5BFF4 /* Пропустить.mp3 */; };
 		B43CD9BD2822BEF600F5BFF4 /* Правильно.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B43CD9BB2822BEF600F5BFF4 /* Правильно.mp3 */; };
 		C92B7E7A2820625D009DCAA5 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92B7E792820625D009DCAA5 /* SettingsController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		089F2A41282661A4007E136F /* TimesUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesUpViewController.swift; sourceTree = "<group>"; };
 		B43CD9BA2822BEF600F5BFF4 /* Пропустить.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Пропустить.mp3"; sourceTree = "<group>"; };
 		B43CD9BB2822BEF600F5BFF4 /* Правильно.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Правильно.mp3"; sourceTree = "<group>"; };
 		C92B7E792820625D009DCAA5 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				C92B7E792820625D009DCAA5 /* SettingsController.swift */,
 				C92B7E7B2820626E009DCAA5 /* GameControllers.swift */,
 				C92B7E7D28206349009DCAA5 /* AboutController.swift */,
+				089F2A41282661A4007E136F /* TimesUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				089F2A42282661A4007E136F /* TimesUpViewController.swift in Sources */,
 				C92B7E822822D20A009DCAA5 /* SettingsModel.swift in Sources */,
 				C92B7E842822D67F009DCAA5 /* DataManager.swift in Sources */,
 				C92B7E7A2820625D009DCAA5 /* SettingsController.swift in Sources */,
