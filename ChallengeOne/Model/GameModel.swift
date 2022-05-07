@@ -57,8 +57,18 @@ class GameModel {
        return team[currentTeam]
     }
     
+    func checkTeam() -> Bool {
+        (currentTeam + 1) < team.count
+    }
+    
     func nextTeam() {
         currentTeam += 1
+    }
+    
+    func getWinTeam() -> String {
+        team.sorted { t1, t2 in
+            t1.point > t2.point
+        }.first!.name
     }
     
 }
