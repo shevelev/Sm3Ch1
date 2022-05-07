@@ -115,9 +115,29 @@ class GameController: UIViewController {
             
             if self.timeLeft == 0 {
                 timer.invalidate()
+                
+                self.showAlert()
             }
         }
     }
+    
+    
+    func showAlert() {
+        let dialogMessage = UIAlertController(title: "Раунд закончен", message: "Готовится следующая команда", preferredStyle: .alert)
+    
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            self.gameModel.nextTeam()
+            self.startStopButton.setTitle("Старт", for: .normal)
+            self.isPause = false
+            self.timeLeft = self.gameModel.settings?.timeToWin ?? 100
+            self.timerTextLabel.text = "Таймер: \(self.timeLeft)"
+            self.updateUI()
+          })
+        
+        dialogMessage.addAction(ok)
+        self.present(dialogMessage, animated: true, completion: nil)
+    }
+    
     func playSound(soundName: String) {
         guard let path = Bundle.main.path(forResource: soundName, ofType:"mp3") else {
             return }

@@ -57,4 +57,8 @@ class GameModel {
        return team[currentTeam]
     }
     
+    func nextTeam() {
+        currentTeam += 1
+    }
+    
 }
