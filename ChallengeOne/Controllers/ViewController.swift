@@ -16,14 +16,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
 
         gameButton.layer.cornerRadius = gameButton.frame.height / 2
         settingsButton.layer.cornerRadius = settingsButton.frame.height / 2
         aboutGameButton.layer.cornerRadius = aboutGameButton.frame.height / 2
-    
     }
-
 }
-
-

@@ -5,42 +5,34 @@
 //  Created by Сергей Шевелев on 02.05.2022.
 //
 import UIKit
-import AVFoundation
 
 class GameController: UIViewController {
     
-    var gameModel = GameModel()
-    var timer = Timer()
-    var player: AVAudioPlayer?
-    
-    var timeLeft = 10
-    var isPause = false
-
+    var gameManager = GameManager()
+    var jokeManager = JokeManager()
     
     @IBOutlet weak var teamLabel: UILabel!
-    
     @IBOutlet weak var round: UILabel!
     @IBOutlet weak var qustionCountLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var timerTextLabel: UILabel!
+    @IBOutlet weak var wordLabel: UILabel!
+    @IBOutlet weak var jokeLabel: UILabel!
     
     @IBOutlet weak var startStopButton: UIButton!
-    @IBOutlet weak var wordLabel: UILabel!
-    
     @IBOutlet weak var trueButton: UIButton!
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
-    @IBOutlet weak var jokeLabel: UILabel!
-    
-    var jokeManager = JokeManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = "Игра"
         jokeManager.delegate = self
+        gameManager.delegate = self
         
         loadUI()
+        gameManager.updateUI()
     }
     
     func loadUI() {
@@ -48,162 +40,24 @@ class GameController: UIViewController {
         skipButton.layer.cornerRadius = skipButton.frame.height / 2
         resetButton.layer.cornerRadius = resetButton.frame.height / 2
         startStopButton.layer.cornerRadius = startStopButton.frame.height / 2
-        
-        let team = gameModel.getTeam()
-        
-        timeLeft = gameModel.settings?.timeToWin ?? 100
-        round.text = "Раунд: \(gameModel.round)"
-        pointLabel.text = "Очки: \(team.point)"
-        qustionCountLabel.text = "Вопрос: \(team.count)"
-        timerTextLabel.text = "Таймер: \(self.timeLeft)"
-        startStopButton.setTitle("Старт", for: .normal)
-        wordLabel.text = "Отгадай слово!"
-        teamLabel.text = "Команда"
-        trueButton.isEnabled = false
-        skipButton.isEnabled = false
-        jokeLabel.text = ""
     }
     
     @IBAction func startStopButtonPressed(_ sender: UIButton) {
-        wordLabel.text = gameModel.getWord()
-        isPause.toggle()
-        timerStopStart()
-        updateUI()
+        gameManager.gameToggle()
     }
-    
-    func timerStopStart() {
-        if isPause {
-            timerFunc()
-            startStopButton.setTitle("Пауза", for: .normal)
-        } else {
-            startStopButton.setTitle("Старт", for: .normal)
-            timer.invalidate()
-        }
-    }
-    
     
     @IBAction func trueButtonPressed(_ sender: UIButton) {
-        gameModel.trueAn()
-        updateUI()
-        playSound(soundName: sender.titleLabel!.text!)
-        
+        gameManager.answerTrue()
+        gameManager.playSound(soundName: sender.titleLabel!.text!)
     }
     
     @IBAction func skipButtonPressed(_ sender: UIButton) {
-        gameModel.skip()
-        updateUI()
-        playSound(soundName: sender.titleLabel!.text!)
+        gameManager.answerSkip()
+        gameManager.playSound(soundName: sender.titleLabel!.text!)
     }
     
     @IBAction func resetButtonPressed(_ sender: UIButton) {
-        gameModel.reset()
-        startStopButton.setTitle("Старт", for: .normal)
-        timer.invalidate()
-        timeLeft = gameModel.settings?.timeToWin ?? 100
-        timerTextLabel.text = "Таймер: \(self.timeLeft)"
-        updateUI()
-    }
-    
-    func updateUI() {
-        let team = gameModel.getTeam()
-        pointLabel.text = "Очки: \(team.point)"
-        qustionCountLabel.text = "Вопрос: \(team.count)"
-        teamLabel.text = team.name
-        wordLabel.text = gameModel.getWord()
-        round.text = "Раунд: \(gameModel.round)"
-        jokeLabel.text = ""
-        
-        if isPause {
-            trueButton.isEnabled = true
-            skipButton.isEnabled = true
-        } else {
-            trueButton.isEnabled = false
-            skipButton.isEnabled = false
-        }
-        
-    }
-    
-    func timerFunc() {
-        
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            self.timeLeft -= 1
-            self.timerTextLabel.text = "Таймер: \(self.timeLeft)"
-            if self.timeLeft == 0 {
-                timer.invalidate()
-                self.showAlert()
-            }
-        }
-    }
-    
-    
-    func showAlert() {
-        
-        if gameModel.checkTeam() {
-            let dialogMessage = UIAlertController(title: "Раунд закончен", message: "Готовится следующая команда", preferredStyle: .alert)
-        
-            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-                self.gameModel.nextTeam()
-                self.startStopButton.setTitle("Старт", for: .normal)
-                self.isPause = false
-                self.timeLeft = self.gameModel.settings?.timeToWin ?? 100
-                self.timerTextLabel.text = "Таймер: \(self.timeLeft)"
-                self.updateUI()
-              })
-            
-            dialogMessage.addAction(ok)
-            self.present(dialogMessage, animated: true, completion: nil)
-        } else {
-            if gameModel.round == 4 {
-                let teamWin = gameModel.getWinTeam()
-                
-                let dialogMessage = UIAlertController(title: "Игра завершена", message: "Выиграла команда \(teamWin)", preferredStyle: .alert)
-            
-                let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-                    self.startStopButton.setTitle("Старт", for: .normal)
-                    self.isPause = false
-                    self.timeLeft = self.gameModel.settings?.timeToWin ?? 100
-                    self.timerTextLabel.text = "Таймер: \(self.timeLeft)"
-                    self.updateUI()
-                    self.gameModel.reset()
-                  })
-                
-                dialogMessage.addAction(ok)
-                self.present(dialogMessage, animated: true, completion: nil)
-            } else {
-                gameModel.nextRound()
-                jokeManager.performRequest()
-                
-                let dialogMessage = UIAlertController(title: "Начался следующий раунд", message: "Команда готовится", preferredStyle: .alert)
-            
-                let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-                    self.startStopButton.setTitle("Старт", for: .normal)
-                    self.isPause = false
-                    self.timeLeft = self.gameModel.settings?.timeToWin ?? 100
-                    self.timerTextLabel.text = "Таймер: \(self.timeLeft)"
-                    self.updateUI()
-                  })
-                
-                dialogMessage.addAction(ok)
-                self.present(dialogMessage, animated: true, completion: nil)
-                
-            }
-            
-        }
-        
-        
-    }
-    
-    func playSound(soundName: String) {
-        guard let path = Bundle.main.path(forResource: soundName, ofType:"mp3") else {
-            return }
-        let url = URL(fileURLWithPath: path)
-
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player?.play()  
-        } catch let error {
-            print(error.localizedDescription)
-        }
+        gameManager.resetGame()
     }
 }
 
@@ -215,14 +69,67 @@ extension GameController: JokeDelegate {
 \(joke.setup)
 \(joke.punchline)
 """
-            print("joke.setup --> \(joke.setup)")
-            print("joke.punchline --> \(joke.punchline)")
         }
     }
     
     func didFailWithError(error: Error) {
         print(error)
     }
+}
+
+extension GameController: GameManagerDelegate {
+    func didUpdateGame(_ gameManager: GameManager, game: GameModel) {
+
+        teamLabel.text = game.getTeam.name
+        round.text = "Раунд: \(game.round)"
+        qustionCountLabel.text = "Вопрос: \(game.getTeam.count)"
+        pointLabel.text = "Очки: \(game.getTeam.point)"
+        wordLabel.text = game.word
+        jokeLabel.text = ""
+        timerTextLabel.text = "Таймер: \(game.timeLeft)"
+        
+        if !game.isPause {
+            trueButton.isEnabled = true
+            skipButton.isEnabled = true
+            startStopButton.setTitle("Пауза", for: .normal)
+        } else {
+            trueButton.isEnabled = false
+            skipButton.isEnabled = false
+            startStopButton.setTitle("Старт", for: .normal)
+        }
+        
+        if (game.isShowAlert && game.alertType == 1) {
+            let dialogMessage = UIAlertController(title: "Раунд закончен", message: "Готовится следующая команда", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                self.gameManager.nextTeam()
+            })
+            
+            dialogMessage.addAction(ok)
+            self.present(dialogMessage, animated: true, completion: nil)
+        } else if (game.isShowAlert && game.alertType == 2) {
+            let dialogMessage = UIAlertController(title: "Игра завершена", message: "Выиграла команда \(game.winTeam)", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                self.gameManager.resetGame()
+            })
+            
+            dialogMessage.addAction(ok)
+            self.present(dialogMessage, animated: true, completion: nil)
+        } else if (game.isShowAlert && game.alertType == 3) {
+            jokeManager.performRequest()
+            let dialogMessage = UIAlertController(title: "Начался следующий раунд", message: "Готовится первая команда", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                self.gameManager.nextRound()
+            })
+            
+            dialogMessage.addAction(ok)
+            self.present(dialogMessage, animated: true, completion: nil)
+        }
+    }
     
-    
+    func didFailWidthError(error: Error) {
+        print(error)
+    }
 }

@@ -14,7 +14,6 @@ extension FileManager {
     }
 }
 
-
 struct DataManager {
     static let savePath = FileManager.documentsDirectory.appendingPathComponent("Settings")
     
@@ -33,5 +32,4 @@ struct DataManager {
             try? data.write(to: savePath, options: [.atomic, .completeFileProtection])
         }
     }
-    
 }

@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 protocol JokeDelegate {
     func didUpdateJoke(_ jokeModel: JokeManager, joke: JokeModel)
     func didFailWithError(error: Error)
@@ -49,5 +48,3 @@ class JokeManager {
         }
     }
 }
-
-

@@ -347,7 +347,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="10" maxValue="120" translatesAutoresizingMaskIntoConstraints="NO" id="ohr-nU-tyQ">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="1" maxValue="120" translatesAutoresizingMaskIntoConstraints="NO" id="ohr-nU-tyQ">
                                         <rect key="frame" x="-2" y="223.5" width="386" height="31"/>
                                         <connections>
                                             <action selector="timeRoundSliderPressed:" destination="Ds2-as-nWE" eventType="valueChanged" id="muF-ht-2KV"/>
