@@ -336,17 +336,19 @@
                                             <action selector="timeRoundSliderPressed:" destination="Ds2-as-nWE" eventType="valueChanged" id="muF-ht-2KV"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Категории слов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1G-7t-iyz">
-                                        <rect key="frame" x="128.5" y="273.5" width="125.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Категории слов (по 250)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1G-7t-iyz">
+                                        <rect key="frame" x="93" y="273.5" width="196" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CdF-9u-aE1">
-                                        <rect key="frame" x="121.5" y="314" width="139" height="32"/>
+                                        <rect key="frame" x="45.5" y="314" width="291" height="32"/>
                                         <segments>
-                                            <segment title="Сложно"/>
-                                            <segment title="Легко"/>
+                                            <segment title="Набор 1"/>
+                                            <segment title="Набор 2"/>
+                                            <segment title="Набор 3"/>
+                                            <segment title="Набор 4"/>
                                         </segments>
                                         <connections>
                                             <action selector="wordSegmentedPressed:" destination="Ds2-as-nWE" eventType="valueChanged" id="3o1-e3-lo6"/>

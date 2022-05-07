@@ -122,16 +122,10 @@ class GameController: UIViewController {
     func timerFunc() {
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            print("timer starts")
-            
             self.timeLeft -= 1
-            
             self.timerTextLabel.text = "Таймер: \(self.timeLeft)"
-            
             if self.timeLeft == 0 {
                 timer.invalidate()
-                
-                                
                 self.showAlert()
             }
         }
@@ -173,7 +167,7 @@ class GameController: UIViewController {
                 self.present(dialogMessage, animated: true, completion: nil)
             } else {
                 gameModel.nextRound()
-                
+                                
                 let dialogMessage = UIAlertController(title: "Начался следующий раунд", message: "Команда готовится", preferredStyle: .alert)
             
                 let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
