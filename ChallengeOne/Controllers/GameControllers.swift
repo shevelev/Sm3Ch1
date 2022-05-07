@@ -30,13 +30,15 @@ class GameController: UIViewController {
     @IBOutlet weak var trueButton: UIButton!
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var jokeLabel: UILabel!
+    
+    var jokeManager = JokeManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Игра"
-        
-        //gameModel.settings = DataManager.loadSettings()
+        jokeManager.delegate = self
         
         loadUI()
     }
@@ -59,6 +61,7 @@ class GameController: UIViewController {
         teamLabel.text = "Команда"
         trueButton.isEnabled = false
         skipButton.isEnabled = false
+        jokeLabel.text = ""
     }
     
     @IBAction func startStopButtonPressed(_ sender: UIButton) {
@@ -107,7 +110,8 @@ class GameController: UIViewController {
         qustionCountLabel.text = "Вопрос: \(team.count)"
         teamLabel.text = team.name
         wordLabel.text = gameModel.getWord()
-        round.text = "Раунд: \(gameModel.round)" 
+        round.text = "Раунд: \(gameModel.round)"
+        jokeLabel.text = ""
         
         if isPause {
             trueButton.isEnabled = true
@@ -167,7 +171,8 @@ class GameController: UIViewController {
                 self.present(dialogMessage, animated: true, completion: nil)
             } else {
                 gameModel.nextRound()
-                                
+                jokeManager.performRequest()
+                
                 let dialogMessage = UIAlertController(title: "Начался следующий раунд", message: "Команда готовится", preferredStyle: .alert)
             
                 let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
@@ -200,4 +205,24 @@ class GameController: UIViewController {
             print(error.localizedDescription)
         }
     }
+}
+
+extension GameController: JokeDelegate {
+    func didUpdateJoke(_ jokeModel: JokeManager, joke: JokeModel) {
+        DispatchQueue.main.async {
+            self.jokeLabel.text = """
+Шутка
+\(joke.setup)
+\(joke.punchline)
+"""
+            print("joke.setup --> \(joke.setup)")
+            print("joke.punchline --> \(joke.punchline)")
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+    
+    
 }
