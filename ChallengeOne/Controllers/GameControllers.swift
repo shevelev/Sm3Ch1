@@ -54,13 +54,16 @@ class GameController: UIViewController {
         timerTextLabel.text = "Таймер: \(self.timeLeft)"
         startStopButton.setTitle("Старт", for: .normal)
         wordLabel.text = "Отгадай слово!"
-        teamLabel.text = "Команда -= 1 =-"
+        teamLabel.text = "Команда"
+        trueButton.isEnabled = false
+        skipButton.isEnabled = false
     }
     
     @IBAction func startStopButtonPressed(_ sender: UIButton) {
         wordLabel.text = gameModel.getWord()
         isPause.toggle()
         timerStopStart()
+        updateUI()
     }
     
     func timerStopStart() {
@@ -102,6 +105,15 @@ class GameController: UIViewController {
         qustionCountLabel.text = "Вопрос: \(team.count)"
         teamLabel.text = team.name
         wordLabel.text = gameModel.getWord()
+        
+        if isPause {
+            trueButton.isEnabled = true
+            skipButton.isEnabled = true
+        } else {
+            trueButton.isEnabled = false
+            skipButton.isEnabled = false
+        }
+        
     }
     
     func timerFunc() {
@@ -151,6 +163,7 @@ class GameController: UIViewController {
                 self.timeLeft = self.gameModel.settings?.timeToWin ?? 100
                 self.timerTextLabel.text = "Таймер: \(self.timeLeft)"
                 self.updateUI()
+                self.gameModel.reset()
               })
             
             dialogMessage.addAction(ok)
@@ -167,8 +180,7 @@ class GameController: UIViewController {
 
         do {
             player = try AVAudioPlayer(contentsOf: url)
-            player?.play()
-            
+            player?.play()  
         } catch let error {
             print(error.localizedDescription)
         }
