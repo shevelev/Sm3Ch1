@@ -35,7 +35,6 @@ class GameManager {
     }
     
     func updateUI() {
-        print("curTeam: \(gameModel.currentTeam)")
         delegate?.didUpdateGame(self, game: gameModel)
     }
     
@@ -50,6 +49,7 @@ class GameManager {
         gameModel.questNumber += 1
         gameModel.team[gameModel.currentTeam].count += 1
         gameModel.team[gameModel.currentTeam].point += 1
+        playSound(soundName: "Правильно")
         getWord()
         updateUI()
     }
@@ -58,6 +58,7 @@ class GameManager {
         gameModel.questNumber += 1
         gameModel.team[gameModel.currentTeam].count += 1
         gameModel.team[gameModel.currentTeam].point -= 1
+        playSound(soundName: "Пропустить")
         getWord()
         updateUI()
     }

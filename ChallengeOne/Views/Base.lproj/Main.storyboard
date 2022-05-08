@@ -155,9 +155,9 @@
                                         <rect key="frame" x="0.0" y="220" width="414" height="77"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOw-Dp-2kJ">
-                                                <rect key="frame" x="185" y="20" width="44" height="37"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" red="0.55773198599999996" green="0.16153386240000001" blue="0.1450667977" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <rect key="frame" x="183.5" y="20" width="47" height="37"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <color key="textColor" name="BrandBlue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>

@@ -48,12 +48,10 @@ class GameController: UIViewController {
     
     @IBAction func trueButtonPressed(_ sender: UIButton) {
         gameManager.answerTrue()
-        gameManager.playSound(soundName: sender.titleLabel!.text!)
     }
     
     @IBAction func skipButtonPressed(_ sender: UIButton) {
         gameManager.answerSkip()
-        gameManager.playSound(soundName: sender.titleLabel!.text!)
     }
     
     @IBAction func resetButtonPressed(_ sender: UIButton) {
@@ -91,11 +89,13 @@ extension GameController: GameManagerDelegate {
         if !game.isPause {
             trueButton.isEnabled = true
             skipButton.isEnabled = true
-            startStopButton.setTitle("Пауза", for: .normal)
+            startStopButton.setTitle(" Пауза", for: .normal)
+            startStopButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
         } else {
             trueButton.isEnabled = false
             skipButton.isEnabled = false
-            startStopButton.setTitle("Старт", for: .normal)
+            startStopButton.setTitle(" Старт", for: .normal)
+            startStopButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
         }
         
         if (game.isShowAlert && game.alertType == 1) {
