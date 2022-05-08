@@ -21,10 +21,6 @@ class GameManager {
     var player: AVAudioPlayer?
     var timer = Timer()
     
-    init() {
-        gameModel.generationTeam()
-    }
-    
     func playSound(soundName: String) {
         guard let path = Bundle.main.path(forResource: soundName, ofType:"mp3") else {
             return }
