@@ -83,8 +83,13 @@ extension GameController: GameManagerDelegate {
         qustionCountLabel.text = "Вопрос: \(game.getTeam.count)"
         pointLabel.text = "Очки: \(game.getTeam.point)"
         wordLabel.text = game.word
-        jokeLabel.text = ""
         timerTextLabel.text = "Таймер: \(game.timeLeft)"
+        
+        if game.isPowerWord {
+            jokeLabel.text = "Сложное слово"
+        } else {
+            jokeLabel.text = ""
+        }
         
         if !game.isPause {
             trueButton.isEnabled = true

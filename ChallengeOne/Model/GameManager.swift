@@ -47,8 +47,12 @@ class GameManager {
     
     func answerTrue() {
         gameModel.questNumber += 1
+        if gameModel.isPowerWord {
+            gameModel.team[gameModel.currentTeam].point += 3
+        } else {
+            gameModel.team[gameModel.currentTeam].point += 1
+        }
         gameModel.team[gameModel.currentTeam].count += 1
-        gameModel.team[gameModel.currentTeam].point += 1
         playSound(soundName: "Правильно")
         getWord()
         updateUI()
@@ -56,8 +60,12 @@ class GameManager {
     
     func answerSkip() {
         gameModel.questNumber += 1
+        if !gameModel.isPowerWord {
+            gameModel.team[gameModel.currentTeam].point -= 1
+        } else {
+            gameModel.team[gameModel.currentTeam].point -= 3
+        }
         gameModel.team[gameModel.currentTeam].count += 1
-        gameModel.team[gameModel.currentTeam].point -= 1
         playSound(soundName: "Пропустить")
         getWord()
         updateUI()
@@ -70,7 +78,15 @@ class GameManager {
     }
     
     func getWord() {
-        gameModel.word = gameModel.questions[gameModel.settings!.setOfWords].shuffled().first!
+        let power = Int.random(in: 1...100)
+        if power < 10 {
+            gameModel.word = gameModel.questions[gameModel.settings!.setOfWords].shuffled().first!
+            gameModel.isPowerWord = true
+        } else {
+            gameModel.word = gameModel.questions[gameModel.settings!.setOfWords].shuffled().first!
+            gameModel.isPowerWord = false
+        }
+        
     }
     
     func showAlert() {

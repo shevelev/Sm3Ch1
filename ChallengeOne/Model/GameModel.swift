@@ -13,12 +13,13 @@ struct GameModel {
     var questNumber: Int = 0
     var currentTeam: Int = 0
     var round: Int = 1
-    var isPause = true
+    var isPause: Bool = true
     var word: String = "Отгадай слово!"
-    var isShowAlert = false
-    var alertType = 1
-    var winTeam = ""
+    var isShowAlert: Bool = false
+    var alertType: Int = 1
+    var winTeam: String = ""
     var timeLeft: Int = 0
+    var isPowerWord: Bool = false
     
     var getTeam: Team {
         return team[currentTeam]
