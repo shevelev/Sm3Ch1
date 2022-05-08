@@ -112,7 +112,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="WSX-UN-RxN">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="e1T-ss-BO8">
+                                            <stackView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="e1T-ss-BO8">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="29"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDy-dT-vK4">
@@ -129,7 +129,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="MEX-xf-XLX">
+                                            <stackView opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="MEX-xf-XLX">
                                                 <rect key="frame" x="0.0" y="29" width="414" height="29"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Qh-yy-Kwd">
@@ -146,7 +146,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTu-qf-KF5">
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTu-qf-KF5">
                                                 <rect key="frame" x="0.0" y="58" width="414" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <color key="textColor" systemColor="systemGray6Color"/>
@@ -157,8 +157,10 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="e1T-ss-BO8" secondAttribute="trailing" id="Ad2-hD-Fsi"/>
                                             <constraint firstAttribute="trailing" secondItem="MEX-xf-XLX" secondAttribute="trailing" id="HOX-l0-d1d"/>
+                                            <constraint firstItem="e1T-ss-BO8" firstAttribute="top" secondItem="WSX-UN-RxN" secondAttribute="top" constant="10" id="HkA-gy-LBl"/>
                                             <constraint firstItem="BTu-qf-KF5" firstAttribute="leading" secondItem="WSX-UN-RxN" secondAttribute="leading" id="Rz9-gY-2xZ"/>
                                             <constraint firstAttribute="trailing" secondItem="BTu-qf-KF5" secondAttribute="trailing" id="ZwF-Bn-m5X"/>
+                                            <constraint firstAttribute="bottom" secondItem="BTu-qf-KF5" secondAttribute="bottom" constant="10" id="bni-BY-VHh"/>
                                             <constraint firstItem="MEX-xf-XLX" firstAttribute="leading" secondItem="WSX-UN-RxN" secondAttribute="leading" id="h8f-yN-O3v"/>
                                             <constraint firstItem="e1T-ss-BO8" firstAttribute="leading" secondItem="WSX-UN-RxN" secondAttribute="leading" id="xof-x1-wL0"/>
                                         </constraints>
