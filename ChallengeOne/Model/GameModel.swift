@@ -33,7 +33,7 @@ struct GameModel {
     
     mutating func generationTeam() {
         for item in 1...(settings?.countCommands ?? 1)  {
-            self.team.append(Team(name: "Команда -= \(item) =-", setOfWord: settings?.setOfWords ?? 0, point: 0, count: 0))
+            self.team.append(Team(name: "Команда: \(item)", setOfWord: settings?.setOfWords ?? 0, point: 0, count: 0))
         }
     }
     
